@@ -1,37 +1,143 @@
 FORMAT: 1A
-HOST: https://polls.apiblueprint.org/
+HOST: https://com.reels.org/
 
 # Ejemplo
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Reels is a simple API allowing consumers to view videos and images in reels format
 
-## Questions Collection [/questions]
+## Questions Collection [/reels/allreels]
 
-### List All Questions [GET]
+### List All Reels [GET]
 
 + Response 200 (application/json)
 
-        [
+        {
+          "storyID": "NEW_BENEFIT",
+          "storyItems": [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+              "categoryCode": "REWARDS_PROGRAM",
+              "segment": "Recompensas",
+              "storyTitle": "Programa de Recompensas",
+              "clientSegment": ["Platinum", "Priority"],
+              "accounts": ["Credito", "Inversiones"],
+              "visualizationRules": {
+                "platformAvailability": "BOTH",
+                "availableVersions": ["10*"],
+                "availableDate": "Mon, 12 Feb 2024 18:27:10 GMT",
+                "expirationDate": "Mon, 01 Mar 2024 18:27:10 GMT",
+                "frequencyDate": "Wed, 20 Feb 2024 18:27:10 GMT",
+                "restartStoryDate": "Fri, 29 Feb 2024 18:27:10 GMT"
+              },
+              "data": {
+                "contentView": {
+                  "image": {
+                    "remoteSrc": "https://upload.wikimedia.org/wikipedia/commons/4/44/Alps_landscape.jpg",
+                    "duration": 5
+                  }
+                },
+                "interactiveButtons": {
+                  "shareButton": true,
+                  "saveButton": true,
+                  "likeButton": true,
+                  "dislikeButton": true
+                }
+              }
+            },
+            {
+              "categoryCode": "CASHBACK_PROMO",
+              "segment": "Promociones",
+              "storyTitle": "Promoción Cashback",
+              "clientSegment": ["Blue", "Gold"],
+              "accounts": ["Debito", "Credito"],
+              "visualizationRules": {
+                "platformAvailability": "MOBILE",
+                "availableVersions": ["10*"],
+                "availableDate": "Wed, 13 Feb 2024 18:27:10 GMT",
+                "expirationDate": "Tue, 05 Mar 2024 18:27:10 GMT",
+                "frequencyDate": "Fri, 22 Feb 2024 18:27:10 GMT",
+                "restartStoryDate": "Sat, 01 Mar 2024 18:27:10 GMT"
+              },
+              "data": {
+                "contentView": {
+                  "video": {
+                    "url": "https://videos.pexels.com/video-files/849789/849789-uhd_1440_2732_25fps.mp4",
+                    "duration": 7,
+                    "imagePlaceholderUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Mountain_landscape.jpg"
+                  }
+                },
+                "interactiveButtons": {
+                  "shareButton": true,
+                  "saveButton": true,
+                  "likeButton": true,
+                  "dislikeButton": true
+                }
+              }
+            },
+            {
+              "categoryCode": "NEW_MOBILE_APP",
+              "segment": "Aplicación Móvil",
+              "storyTitle": "Nuevas funcionalidades de la App",
+              "clientSegment": ["Gold", "Priority"],
+              "accounts": ["Ahorro", "Inversiones"],
+              "visualizationRules": {
+                "platformAvailability": "BOTH",
+                "availableVersions": ["11*"],
+                "availableDate": "Thu, 14 Feb 2024 18:27:10 GMT",
+                "expirationDate": "Wed, 06 Mar 2024 18:27:10 GMT",
+                "frequencyDate": "Mon, 25 Feb 2024 18:27:10 GMT",
+                "restartStoryDate": "Tue, 05 Mar 2024 18:27:10 GMT"
+              },
+              "data": {
+                "contentView": {
+                  "image": {
+                    "remoteSrc": "https://upload.wikimedia.org/wikipedia/commons/9/94/Lake_landscape.jpg",
+                    "duration": 4
+                  }
+                },
+                "interactiveButtons": {
+                  "shareButton": true,
+                  "saveButton": true,
+                  "likeButton": true,
+                  "dislikeButton": true
+                }
+              }
+            },
+            {
+              "categoryCode": "INVESTMENT_TIPS",
+              "segment": "Inversiones",
+              "storyTitle": "Consejos de Inversión",
+              "clientSegment": ["Priority"],
+              "accounts": ["Inversiones"],
+              "visualizationRules": {
+                "platformAvailability": "WEB",
+                "availableVersions": ["10*"],
+                "availableDate": "Fri, 15 Feb 2024 18:27:10 GMT",
+                "expirationDate": "Thu, 07 Mar 2024 18:27:10 GMT",
+                "frequencyDate": "Wed, 26 Feb 2024 18:27:10 GMT",
+                "restartStoryDate": "Sun, 03 Mar 2024 18:27:10 GMT"
+              },
+              "data": {
+                "contentView": {
+                  "video": {
+                    "url": "https://videos.pexels.com/video-files/4523900/4523900-uhd_1440_2732_25fps.mp4",
+                    "duration": 6,
+                    "imagePlaceholderUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Investment_landscape.jpg"
+                  }
+                },
+                "bottomActionView": {
+                  "title": "Ver más",
+                  "url": "https://www.banamex.com/inversiones"
+                },
+                "interactiveButtons": {
+                  "shareButton": true,
+                  "saveButton": true,
+                  "likeButton": true,
+                  "dislikeButton": true
+                }
+              }
             }
-        ]
+          ]
+        }
 
 ### Create a New Question [POST]
 
